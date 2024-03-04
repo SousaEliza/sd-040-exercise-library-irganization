@@ -2,7 +2,9 @@ const { books } = require('../data/library');
 
 // Requisito 1
 const fantasyOrScienceFiction = () => {
-  // escreva seu código aqui
+  const result = books
+    .filter(({ genre }) => genre === 'Ficção Científica' || genre === 'Fantasia');
+  return result;
 };
 
 // Requisito 2
