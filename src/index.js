@@ -27,9 +27,9 @@ const fantasyOrScienceFictionAuthors = () => books
   .map(({ author: { name } }) => name).sort();
 
 // Requisito 5
-const oldBooks = (year) => {
-  // escreva seu código aqui
-};
+const oldBooks = (year) => books
+  .filter(({ releaseYear }) => year - releaseYear > 60)
+  .map((book) => book.name);
 
 // Requisito 6
 const authorWith3DotsOnName = () => {
