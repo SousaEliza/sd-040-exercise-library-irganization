@@ -22,9 +22,9 @@ const booksByAuthorBirthYear = (parambirthYear) => books
   .filter(({ author: { birthYear } }) => birthYear === parambirthYear).map((book) => book.name);
 
 // Requisito 4
-const fantasyOrScienceFictionAuthors = () => {
-  // escreva seu código aqui
-};
+const fantasyOrScienceFictionAuthors = () => books
+  .filter(({ genre }) => genre !== 'Terror')
+  .map(({ author: { name } }) => name).sort();
 
 // Requisito 5
 const oldBooks = (year) => {
