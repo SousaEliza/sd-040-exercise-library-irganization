@@ -8,9 +8,14 @@ const fantasyOrScienceFiction = () => {
 };
 
 // Requisito 2
-const oldBooksOrdered = (year) => {
-  // escreva seu código aqui
-};
+const oldBooksOrdered = (year) => books
+  .filter(({ releaseYear }) => year - releaseYear > 60)
+  .sort((a, b) => {
+    if (a > b) {
+      return 1;
+    }
+    return -1;
+  });
 
 // Requisito 3
 const booksByAuthorBirthYear = (birthYear) => {
